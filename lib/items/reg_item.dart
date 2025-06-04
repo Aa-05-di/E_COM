@@ -17,13 +17,13 @@ class RegBox extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
           child: TextField(
-            style: TextStyle(color: Colors.grey),
+            style: TextStyle(color: const Color.fromARGB(255, 107, 107, 107)),
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: data,
               hintStyle: TextStyle(
                 fontSize: 15,
-                color: Colors.deepPurple,
+                color: Colors.grey,
                 fontWeight: FontWeight.bold,
               ),
             ),

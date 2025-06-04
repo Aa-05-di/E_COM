@@ -1,4 +1,5 @@
 import 'package:ecom/login_page.dart';
+import 'package:ecom/registration.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -15,6 +16,9 @@ class MyApp extends StatelessWidget {
       title: "E-Commerce App",
       theme: ThemeData.dark(useMaterial3: true),
       home: const LoginPage(),
+      routes: {
+        '/register':(context)=>const RegistrationPage(),
+      },
     );
   }
 }

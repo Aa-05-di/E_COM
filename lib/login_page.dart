@@ -135,6 +135,9 @@ class LoginPage extends StatelessWidget {
               SizedBox(height: 60),
               //Register button
               GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context,'/register');
+                },
                 child: Text(
                   "Not a User? Register Now",
                   style: TextStyle(color: Colors.deepPurple),

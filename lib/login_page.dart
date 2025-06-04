@@ -1,3 +1,4 @@
+import 'package:ecom/log_item.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -47,66 +48,10 @@ class LoginPage extends StatelessWidget {
             children: [
               SizedBox(height: 90),
               //Username
-              SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  color: Colors.deepPurple[50],
-                  elevation: 3,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 13,
-                      vertical: 12,
-                    ),
-                    child: TextField(
-                      style: TextStyle(
-                        color: Colors.black38,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Username',
-                        hintStyle: TextStyle(color: Colors.deepPurple),
-                        icon: Icon(Icons.person, color: Colors.deepPurple),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              LogButton(data: "Username", symbol: Icons.person),
               SizedBox(height: 30),
               //Password
-              SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusGeometry.circular(20),
-                  ),
-                  elevation: 3,
-                  color: Colors.deepPurple[50],
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 13,
-                      vertical: 12,
-                    ),
-                    child: TextField(
-                      style: TextStyle(
-                        color: Colors.black38,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        icon: Icon(Icons.key, color: Colors.deepPurple),
-                        hintText: "Password",
-                        hintStyle: TextStyle(color: Colors.deepPurple),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              LogButton(data: "Password", symbol: Icons.key),
               SizedBox(height: 30),
               //LOGIN
               SizedBox(

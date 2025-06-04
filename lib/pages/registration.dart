@@ -1,5 +1,5 @@
-import 'package:ecom/reg_item.dart';
-import 'package:ecom/submit.dart';
+import 'package:ecom/items/reg_item.dart';
+import 'package:ecom/items/submit.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationPage extends StatelessWidget {

@@ -8,27 +8,36 @@ class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[300],
+      backgroundColor: const Color(0xFFE8DAEF), // Soft lavender background
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple[300],
-        iconTheme: IconThemeData(
-          color: Colors.deepPurple,
+        backgroundColor: const Color(0xFFD2B4DE), // Deeper plum
+        iconTheme: const IconThemeData(
+          color: Colors.white,
         ),
-        title: Text("Registration Details"),
+        title: const Text(
+          "Registration Details",
+          style: TextStyle(color: Colors.white),
+        ),
+        elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
-          children: [
+          children: const [
             RegBox(data: "Full Name"),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             RegBox(data: "Email"),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             RegBox(data: "Password"),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             RegBox(data: "Confirm Password"),
-            SizedBox(height: 20,),
-            Submit(data: "Register", x: 110, y: 50,colour: const Color.fromARGB(255, 180, 144, 199),),
+            SizedBox(height: 20),
+            Submit(
+              data: "Register",
+              x: 120,
+              y: 50,
+              colour: Color(0xFFC39BD3), // Soft violet button
+            ),
           ],
         ),
       ),

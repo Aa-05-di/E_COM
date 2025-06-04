@@ -1,4 +1,5 @@
 import 'package:ecom/log_item.dart';
+import 'package:ecom/submit.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -54,29 +55,7 @@ class LoginPage extends StatelessWidget {
               LogButton(data: "Password", symbol: Icons.key),
               SizedBox(height: 30),
               //LOGIN
-              SizedBox(
-                width: 100,
-                height: 50,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusGeometry.circular(10),
-                  ),
-                  color: Colors.deepPurple[50],
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 22,
-                      vertical: 11,
-                    ),
-                    child: Text(
-                      "LOGIN",
-                      style: TextStyle(
-                        color: Colors.deepPurple,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              Submit(data: "Login", x: 100, y: 50,colour: Colors.deepPurple[50],),
               SizedBox(height: 60),
               //Register button
               GestureDetector(

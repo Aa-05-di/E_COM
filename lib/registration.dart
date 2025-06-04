@@ -1,4 +1,5 @@
 import 'package:ecom/reg_item.dart';
+import 'package:ecom/submit.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationPage extends StatelessWidget {
@@ -26,6 +27,8 @@ class RegistrationPage extends StatelessWidget {
             RegBox(data: "Password"),
             SizedBox(height: 10,),
             RegBox(data: "Confirm Password"),
+            SizedBox(height: 20,),
+            Submit(data: "Register", x: 110, y: 50,colour: const Color.fromARGB(255, 180, 144, 199),),
           ],
         ),
       ),

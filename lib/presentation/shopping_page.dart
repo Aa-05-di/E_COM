@@ -11,6 +11,7 @@ class ShoppingPage extends StatefulWidget {
 
 class _ShoppingPageState extends State<ShoppingPage> {
   String selectedTag = 'All';
+  final TextEditingController search = TextEditingController();
 
   final List<Product> allProducts = [
     Product(
@@ -19,7 +20,29 @@ class _ShoppingPageState extends State<ShoppingPage> {
       productName: "iPhone 16 Pro 256GB",
       price: "\$1440",
       desc: "4 left",
-      details: '''...''',
+      details: '''
+
+⚙️ Specifications:
+6.3" Super Retina XDR OLED
+A18 Pro Chip
+256GB NVMe Storage
+48MP Triple Camera with LiDAR
+iOS 18
+
+🎯 Key Features:
+Titanium Frame
+ProMotion (120Hz)
+USB-C Port
+Dynamic Island
+Face ID
+
+📦 Included:
+iPhone 16 Pro
+USB-C to USB-C Cable
+Documentation
+
+🔒 1-Year Apple Warranty
+''',
     ),
     Product(
       tag: "Laptops",
@@ -67,9 +90,13 @@ class _ShoppingPageState extends State<ShoppingPage> {
 
   @override
   Widget build(BuildContext context) {
-    List<Product> filteredProducts = selectedTag == 'All'
-        ? allProducts
-        : allProducts.where((product) => product.tag == selectedTag).toList();
+    List<Product> filteredProducts = allProducts.where((product) {
+      final matchesTag = selectedTag == 'All' || product.tag == selectedTag;
+      final matchesSearch = product.productName.toLowerCase().contains(
+        search.text.toLowerCase(),
+      );
+      return matchesTag && matchesSearch;
+    }).toList();
 
     return Scaffold(
       backgroundColor: const Color(0xFFF9F9FB),
@@ -104,8 +131,12 @@ class _ShoppingPageState extends State<ShoppingPage> {
                       horizontal: 15,
                       vertical: 9,
                     ),
-                    child: const TextField(
-                      style: TextStyle(color: Colors.grey),
+                    child: TextField(
+                      controller: search,
+                      onChanged: (value) {
+                        setState(() {}); 
+                      },
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         icon: Icon(Icons.search, color: Colors.white),
                         border: InputBorder.none,

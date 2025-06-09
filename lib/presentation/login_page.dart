@@ -17,6 +17,8 @@ class _LoginPageState extends State<LoginPage> {
 
   void _login(BuildContext context){
     if(usernameController.text.isNotEmpty && passwordController.text.isNotEmpty){
+      usernameController.clear();
+      passwordController.clear();
       Navigator.push(context,MaterialPageRoute(builder: (_)=>ShoppingPage()));
     }
     else{

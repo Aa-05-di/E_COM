@@ -1,9 +1,41 @@
 import 'package:ecom/items/reg_item.dart';
 import 'package:ecom/items/submit.dart';
+import 'package:ecom/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
-class RegistrationPage extends StatelessWidget {
+class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
+
+  @override
+  State<RegistrationPage> createState() => _RegistrationPageState();
+}
+
+class _RegistrationPageState extends State<RegistrationPage> {
+  final TextEditingController fullnamecontroller = TextEditingController();
+  final TextEditingController emailcontroller = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmcontroller = TextEditingController();
+
+  void _reg(BuildContext context){
+    if(fullnamecontroller.text.isNotEmpty && emailcontroller.text.isNotEmpty && passwordController.text.isNotEmpty && confirmcontroller.text.isNotEmpty){
+      if(passwordController.text==confirmcontroller.text){
+        ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("User Registered Successfully")),
+      );
+        Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (_)=>LoginPage()),(route)=>false);
+      }
+      else{
+        ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Password fields do not match")),
+      );
+      }
+    }
+    else{
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Please fill all fields")),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,20 +55,23 @@ class RegistrationPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
-          children: const [
-            RegBox(data: "Full Name"),
-            SizedBox(height: 10),
-            RegBox(data: "Email"),
-            SizedBox(height: 10),
-            RegBox(data: "Password"),
-            SizedBox(height: 10),
-            RegBox(data: "Confirm Password"),
-            SizedBox(height: 20),
-            Submit(
-              data: "Register",
-              x: 120,
-              y: 50,
-              colour: Color(0xFFC39BD3), // Soft violet button
+          children: [
+            RegBox(data: "Full Name", controller: fullnamecontroller,),
+            const SizedBox(height: 10),
+            RegBox(data: "Email", controller: emailcontroller,),
+            const SizedBox(height: 10),
+            RegBox(data: "Password", controller: passwordController,),
+            const SizedBox(height: 10),
+            RegBox(data: "Confirm Password", controller: confirmcontroller,),
+            const SizedBox(height: 20),
+            GestureDetector(
+              onTap: ()=>_reg(context),
+              child: const Submit(
+                data: "Register",
+                x: 120,
+                y: 50,
+                colour: Color(0xFFC39BD3),
+              ),
             ),
           ],
         ),

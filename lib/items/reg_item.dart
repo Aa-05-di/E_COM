@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class RegBox extends StatelessWidget {
   final String data;
-  const RegBox({super.key,required this.data});
+  final TextEditingController controller;
+  const RegBox({super.key,required this.data,required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,7 @@ class RegBox extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
           child: TextField(
+            controller: controller,
             style: TextStyle(color: const Color.fromARGB(255, 107, 107, 107)),
             decoration: InputDecoration(
               border: InputBorder.none,

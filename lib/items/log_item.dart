@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class LogButton extends StatelessWidget {
   final String data;
   final IconData symbol;
-  const LogButton({super.key,required this.data,required this.symbol});
+  final TextEditingController controller;
+  const LogButton({super.key,required this.data,required this.symbol,required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,7 @@ class LogButton extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 12),
           child: TextField(
+            controller: controller,
             style: TextStyle(
               color: Colors.black38,
               fontWeight: FontWeight.bold,

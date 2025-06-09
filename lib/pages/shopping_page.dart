@@ -60,7 +60,7 @@ class ShoppingPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            //Search Bar
+            //Search_Bar
             Padding(
               padding: const EdgeInsets.all(13.0),
               child: SizedBox(
@@ -93,6 +93,7 @@ class ShoppingPage extends StatelessWidget {
                 ),
               ),
             ),
+            //Scroll_Bar
             SizedBox(
               height: 42,
               child: ListView(
@@ -104,6 +105,7 @@ class ShoppingPage extends StatelessWidget {
                   _buildCategoryChip("Headphones"),
                   _buildCategoryChip("Smartwatches"),
                   _buildCategoryChip("Cameras"),
+                  _buildCategoryChip("Chargers"),
                 ],
               ),
             ),

@@ -59,7 +59,7 @@ class MenuCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      product.desc,
+                      product.desc??'',
                       style: const TextStyle(
                         fontSize: 13,
                         color: Colors.black54,

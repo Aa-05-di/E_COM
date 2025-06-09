@@ -70,7 +70,7 @@ class ShoppingPage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  color: Colors.amber[200], // Softer yellow
+                  color: Colors.grey[400], // Softer yellow
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 15,

@@ -1,5 +1,5 @@
-import 'package:ecom/pages/login_page.dart';
-import 'package:ecom/pages/registration.dart';
+import 'package:ecom/presentation/login_page.dart';
+import 'package:ecom/presentation/registration.dart';
 import 'package:flutter/material.dart';
 
 void main() {

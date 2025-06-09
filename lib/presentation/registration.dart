@@ -1,6 +1,6 @@
-import 'package:ecom/items/reg_item.dart';
-import 'package:ecom/items/submit.dart';
-import 'package:ecom/pages/login_page.dart';
+import 'package:ecom/core/reg_item.dart';
+import 'package:ecom/core/submit.dart';
+import 'package:ecom/presentation/login_page.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationPage extends StatefulWidget {

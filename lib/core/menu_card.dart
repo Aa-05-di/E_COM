@@ -1,5 +1,5 @@
-import 'package:ecom/items/product_model.dart';
-import 'package:ecom/pages/product_details.dart';
+import 'package:ecom/data/product_model.dart';
+import 'package:ecom/presentation/product_details.dart';
 import 'package:flutter/material.dart';
 
 class MenuCard extends StatelessWidget {

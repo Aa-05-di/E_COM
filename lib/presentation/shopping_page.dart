@@ -1,5 +1,5 @@
-import 'package:ecom/items/menu_card.dart';
-import 'package:ecom/items/product_model.dart';
+import 'package:ecom/core/menu_card.dart';
+import 'package:ecom/data/product_model.dart';
 import 'package:flutter/material.dart';
 
 class ShoppingPage extends StatelessWidget {

@@ -1,6 +1,6 @@
-import 'package:ecom/items/log_item.dart';
-import 'package:ecom/items/submit.dart';
-import 'package:ecom/pages/shopping_page.dart';
+import 'package:ecom/core/log_item.dart';
+import 'package:ecom/core/submit.dart';
+import 'package:ecom/presentation/shopping_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {

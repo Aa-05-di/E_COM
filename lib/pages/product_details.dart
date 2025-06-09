@@ -8,12 +8,22 @@ class ProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+    leading: IconButton(
+      icon: Icon(Icons.arrow_back, color: Colors.black),
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    ),
+  ),
       backgroundColor: Colors.grey[400],
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 60),
+            const SizedBox(height: 10),
             Center(
               child: Material(
                 elevation: 8,
@@ -29,16 +39,21 @@ class ProductDetails extends StatelessWidget {
                   ),
                   child: Stack(
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Image.network(
-                          product.photo,
-                          fit: BoxFit.contain,
+                      Positioned.fill(
+                        child: Align(
+                          alignment:Alignment.center,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Image.network(
+                              product.photo,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
                         ),
                       ),
                       Positioned(
-                        top: 2,
-                        right: 4,
+                        top: 1,
+                        right: 3,
                         child: IconButton(
                           onPressed: () {},
                           icon: Icon(Icons.favorite_border, color: Colors.red),

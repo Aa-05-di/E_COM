@@ -13,6 +13,29 @@ class ShoppingPage extends StatelessWidget {
         productName: "iPhone 16 Pro 256GB",
         price: "\$1440",
         desc: "4 left",
+        details: '''
+
+⚙️ Specifications:
+6.3" Super Retina XDR OLED
+A18 Pro Chip
+256GB NVMe Storage
+48MP Triple Camera with LiDAR
+iOS 18
+
+🎯 Key Features:
+Titanium Frame
+ProMotion (120Hz)
+USB-C Port
+Dynamic Island
+Face ID
+
+📦 Included:
+iPhone 16 Pro
+USB-C to USB-C Cable
+Documentation
+
+🔒 1-Year Apple Warranty
+''',
       ),
       Product(
         photo:

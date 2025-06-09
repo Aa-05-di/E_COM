@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Text(
               "E-COMMERCE",
               style: TextStyle(
-                fontSize: 40,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,
                 letterSpacing: 2.0,

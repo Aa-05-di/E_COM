@@ -21,12 +21,13 @@ class LogButton extends StatelessWidget {
             controller: controller,
             style: TextStyle(
               color: Colors.black38,
+              fontSize: 10,
               fontWeight: FontWeight.bold,
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: data,
-              hintStyle: TextStyle(color: Colors.deepPurple),
+              hintStyle: TextStyle(color: Colors.grey),
               icon: Icon(symbol, color: Colors.deepPurple),
             ),
           ),

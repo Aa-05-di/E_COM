@@ -1,41 +1,50 @@
 import 'package:flutter/material.dart';
 
-class LogButton extends StatelessWidget {
-  final String data;
-  final IconData symbol;
+class LoginInputField extends StatelessWidget {
+  final String hintText;
+  final IconData icon;
   final TextEditingController controller;
   final String? Function(String?)? validator;
-  const LogButton({
+  final bool obscureText;
+
+  const LoginInputField({
     super.key,
-    required this.data,
-    required this.symbol,
+    required this.hintText,
+    required this.icon,
     required this.controller,
     required this.validator,
+    this.obscureText = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 50,
+      height: 60,
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
         color: Colors.deepPurple[50],
         elevation: 3,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 5),
           child: TextFormField(
             controller: controller,
-            style: TextStyle(
-              color: Colors.black38,
-              fontSize: 10,
-              fontWeight: FontWeight.bold,
+            obscureText: obscureText,
+            style: const TextStyle(
+              color: Colors.black87,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
-              hintText: data,
-              hintStyle: TextStyle(color: Colors.grey),
-              icon: Icon(symbol, color: Colors.deepPurple),
+              hintText: hintText,
+              hintStyle: const TextStyle(
+                color: Colors.grey,
+                fontSize: 13,
+              ),
+              icon: Icon(icon, color: Colors.deepPurple),
             ),
             validator: validator,
           ),

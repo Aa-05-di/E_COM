@@ -19,6 +19,7 @@ class RegBox extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
           child: TextFormField(
+            maxLines: 1,
             controller: controller,
             style: TextStyle(color: const Color.fromARGB(255, 107, 107, 107),fontSize: 10),
             decoration: InputDecoration(

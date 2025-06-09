@@ -1,5 +1,6 @@
 import 'package:ecom/core/menu_card.dart';
 import 'package:ecom/data/product_model.dart';
+import 'package:ecom/presentation/cart.dart';
 import 'package:flutter/material.dart';
 
 class ShoppingPage extends StatefulWidget {
@@ -101,6 +102,9 @@ Documentation
     return Scaffold(
       backgroundColor: const Color(0xFFF9F9FB),
       appBar: AppBar(
+        actions: [
+          IconButton(onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (_)=>Cart()));}, icon: Icon(Icons.shopping_cart,color: Colors.black,),)
+        ],
         title: const Text(
           "Shop Here",
           style: TextStyle(

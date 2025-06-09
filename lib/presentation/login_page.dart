@@ -70,22 +70,22 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 SizedBox(height: 90),
                 //Username
-                LogButton(
-                  data: "Username",
-                  symbol: Icons.person,
+                LoginInputField(
                   controller: usernameController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter username';
                     }
                     return null;
-                  },
-                ),
+                  }, 
+                  hintText: 'Username', 
+                  icon: Icons.person
+                  ),
                 SizedBox(height: 30),
                 //Password
-                LogButton(
-                  data: "Password",
-                  symbol: Icons.key,
+                LoginInputField(
+                  hintText: "Password",
+                  icon: Icons.key,
                   controller: passwordController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -124,3 +124,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+

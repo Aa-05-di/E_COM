@@ -11,6 +11,9 @@ class ProductDetails extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        actions: [
+          IconButton(onPressed: () {  }, icon: Icon(Icons.shopping_cart,color: Colors.black,),)
+        ],
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
@@ -58,7 +61,10 @@ class ProductDetails extends StatelessWidget {
                         right: 3,
                         child: IconButton(
                           onPressed: () {},
-                          icon: const Icon(Icons.favorite_border, color: Colors.red),
+                          icon: const Icon(
+                            Icons.favorite_border,
+                            color: Colors.red,
+                          ),
                         ),
                       ),
                     ],
@@ -125,12 +131,36 @@ class ProductDetails extends StatelessWidget {
                         height: 1.5,
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 60,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Added to cart!')),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange[400],
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          elevation: 4,
+                        ),
+                        child: const Text(
+                          "Add To Cart",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
             ),
-            const SizedBox(height: 20),
           ],
         ),
       ),

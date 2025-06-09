@@ -4,7 +4,14 @@ class LogButton extends StatelessWidget {
   final String data;
   final IconData symbol;
   final TextEditingController controller;
-  const LogButton({super.key,required this.data,required this.symbol,required this.controller});
+  final String? Function(String?)? validator;
+  const LogButton({
+    super.key,
+    required this.data,
+    required this.symbol,
+    required this.controller,
+    required this.validator,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +24,7 @@ class LogButton extends StatelessWidget {
         elevation: 3,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 12),
-          child: TextField(
+          child: TextFormField(
             controller: controller,
             style: TextStyle(
               color: Colors.black38,
@@ -30,6 +37,7 @@ class LogButton extends StatelessWidget {
               hintStyle: TextStyle(color: Colors.grey),
               icon: Icon(symbol, color: Colors.deepPurple),
             ),
+            validator: validator,
           ),
         ),
       ),

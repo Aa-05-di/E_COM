@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class RegBox extends StatelessWidget {
+  final String? Function(String?)? validator;
   final String data;
   final TextEditingController controller;
-  const RegBox({super.key,required this.data,required this.controller});
+  const RegBox({super.key,required this.data,required this.controller,required this.validator});
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +17,20 @@ class RegBox extends StatelessWidget {
           borderRadius: BorderRadiusGeometry.circular(10),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
-          child: TextField(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+          child: TextFormField(
             controller: controller,
-            style: TextStyle(color: const Color.fromARGB(255, 107, 107, 107)),
+            style: TextStyle(color: const Color.fromARGB(255, 107, 107, 107),fontSize: 10),
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: data,
               hintStyle: TextStyle(
-                fontSize: 15,
+                fontSize: 10,
                 color: Colors.grey,
                 fontWeight: FontWeight.bold,
               ),
             ),
+            validator: validator,
           ),
         ),
       ),

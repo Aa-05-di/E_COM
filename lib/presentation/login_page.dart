@@ -11,22 +11,18 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
+  final _formKey = GlobalKey<FormState>();
   final TextEditingController usernameController = TextEditingController();
-  final TextEditingController passwordController  = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
-  void _login(BuildContext context){
-    if(usernameController.text.isNotEmpty && passwordController.text.isNotEmpty){
-      usernameController.clear();
-      passwordController.clear();
-      Navigator.push(context,MaterialPageRoute(builder: (_)=>ShoppingPage()));
-    }
-    else{
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Please fill all fields")),
-      );
-    }
+ void _login(BuildContext context) {
+  if (_formKey.currentState!.validate()) {
+    usernameController.clear();
+    passwordController.clear();
+    Navigator.push(context, MaterialPageRoute(builder: (_) => ShoppingPage()));
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -68,37 +64,60 @@ class _LoginPageState extends State<LoginPage> {
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(height: 90),
-              //Username
-              LogButton(data: "Username", symbol: Icons.person, controller: usernameController,),
-              SizedBox(height: 30),
-              //Password
-              LogButton(data: "Password", symbol: Icons.key, controller: passwordController,),
-              SizedBox(height: 30),
-              //LOGIN
-              GestureDetector(
-                onTap:()=>_login(context),
-                child: Submit(
-                  data: "Login",
-                  x: 100,
-                  y: 50,
-                  colour: Colors.deepPurple[50],
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                SizedBox(height: 90),
+                //Username
+                LogButton(
+                  data: "Username",
+                  symbol: Icons.person,
+                  controller: usernameController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter username';
+                    }
+                    return null;
+                  },
                 ),
-              ),
-              SizedBox(height: 60),
-              //Register button
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/register');
-                },
-                child: Text(
-                  "Not a User? Register Now",
-                  style: TextStyle(color: Colors.deepPurple),
+                SizedBox(height: 30),
+                //Password
+                LogButton(
+                  data: "Password",
+                  symbol: Icons.key,
+                  controller: passwordController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter password';
+                    }
+                    return null;
+                  },
                 ),
-              ),
-            ],
+                SizedBox(height: 30),
+                //LOGIN
+                GestureDetector(
+                  onTap: () => _login(context),
+                  child: Submit(
+                    data: "Login",
+                    x: 100,
+                    y: 50,
+                    colour: Colors.deepPurple[50],
+                  ),
+                ),
+                SizedBox(height: 60),
+                //Register button
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/register');
+                  },
+                  child: Text(
+                    "Not a User? Register Now",
+                    style: TextStyle(color: Colors.deepPurple),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

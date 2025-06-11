@@ -1,4 +1,5 @@
 import 'package:ecom/data/product_model.dart';
+import 'package:ecom/presentation/cart.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetails extends StatelessWidget {
@@ -12,7 +13,7 @@ class ProductDetails extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          IconButton(onPressed: () {  }, icon: Icon(Icons.shopping_cart,color: Colors.black,),)
+          IconButton(onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (_)=>Cart()));}, icon: Icon(Icons.shopping_cart,color: Colors.black,),)
         ],
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -139,6 +140,7 @@ class ProductDetails extends StatelessWidget {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('Added to cart!')),
                           );
+                          Navigator.push(context,MaterialPageRoute(builder: (_)=>Cart()));
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange[400],
